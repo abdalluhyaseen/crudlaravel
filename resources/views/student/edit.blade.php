@@ -1,6 +1,6 @@
 <h1 style="text-align: center; font-family: Arial, sans-serif; color: #333;"> Create New Student </h1>
 
-<form action="{{route('student.update', ['student' => $student->id])}}" method="POST" style="display: flex; flex-direction: column; align-items: flex-start; gap: 10px; width: 300px; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 10px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); background-color: #f9f9f9;">
+<form action="{{route('student.update',   $student->id)}}" method="POST" style="display: flex; flex-direction: column; align-items: flex-start; gap: 10px; width: 300px; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 10px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); background-color: #f9f9f9;">
      @method('PUT')
     @csrf
     <label for="name" style="font-size: 14px; font-weight: bold; color: #333;">Name:</label>

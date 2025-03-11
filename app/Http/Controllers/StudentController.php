@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\student;
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
 
 class StudentController extends Controller
 {
@@ -13,21 +15,17 @@ class StudentController extends Controller
      */
     public function index()
     {
-          $students = Student::all();
-       return view('student.index', compact('students'));
+       $students = Student::with('Postal_Code')->get();
+        return view('student.index', compact('students'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+
     public function create()
     {
         return view('student.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+
     public function store(Request $request)
     {
          // #1
@@ -39,26 +37,19 @@ class StudentController extends Controller
 
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(student $student)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
+
     public function edit($id)
     {
     $student = Student::findorFail($id);
         return view('student.edit', compact('student'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
+
     public function update(Request $request, $id)
     {
         $student = Student::findorFail($id);
@@ -72,13 +63,16 @@ class StudentController extends Controller
         return redirect()->route('student.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+
     public function destroy($id)
     {
         // Student::findorFail($id)->delete();
         Student::destroy($id);
         return redirect()->route('student.index');
     }
+
+
+
+
+
 }

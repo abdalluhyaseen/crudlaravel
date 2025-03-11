@@ -12,4 +12,8 @@ class student extends Model
         'name',
         'email',
     ];
+   public function postal_code()
+    {
+        return $this->hasOne(Postal_Code::class);
+    }
 }

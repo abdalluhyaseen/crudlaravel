@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>new student</title>
+</head>
+<body>
 <h1 style="text-align: center; font-family: Arial, sans-serif; color: #333;"> Create New Student </h1>
 
 <form action="{{route('student.store')}}" method="POST" style="display: flex; flex-direction: column; align-items: flex-start; gap: 10px; width: 300px; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 10px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); background-color: #f9f9f9;">
@@ -12,3 +21,6 @@
         Submit
     </button>
 </form>
+
+</body>
+</html>

@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>student</title>
+</head>
+<body>
 <h1 style="text-align: center; font-family: Arial, sans-serif; color: #333;">Show All Students</h1>
 
 <div style="display: flex; justify-content: space-between; align-items: center; margin: 20px auto; width: 80%;">
@@ -12,6 +21,7 @@
             <th style="padding: 10px; border: 1px solid #ddd; color: #333;">#</th>
             <th style="padding: 10px; border: 1px solid #ddd; color: #333;">Name</th>
             <th style="padding: 10px; border: 1px solid #ddd; color: #333;">Email</th>
+            <th style="padding: 10px; border: 1px solid #ddd; color: #333;">Postal_Code</th>
         </tr>
     </thead>
     <tbody>
@@ -20,6 +30,7 @@
                 <td style="padding: 10px; border: 1px solid #ddd;">{{ $student->id }}</td>
                 <td style="padding: 10px; border: 1px solid #ddd;">{{ $student->name }}</td>
                 <td style="padding: 10px; border: 1px solid #ddd;">{{ $student->email }}</td>
+                <td style="padding: 10px; border: 1px solid #ddd;">{{ $student->Postal_Code ? $student->postal_Code->postal_code : "No postal code available" }}</td>
                 <td style="padding: 10px; border: 1px solid #ddd;"><a href="{{route('student.edit',$student->id)}}">edit</a></td>
                 <td style="padding: 10px; border: 1px solid #ddd;">
                     <form action="{{ route('student.destroy',$student->id) }}" method="POST">
@@ -33,3 +44,6 @@
     </tbody>
 </table>
 
+
+</body>
+</html>
